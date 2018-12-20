@@ -1,28 +1,61 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './searchbar/SearchBar.css';
+import SearchBar from './searchbar/SearchBar.js';
+import Results from './results/Results.js'
 
 class App extends Component {
-  render() {
+    constructor(){
+        super();
+        this.state ={
+          searchValue : 'Empty',
+          searchResult:[]
+        };
+
+        this.updateSearchValue = this.updateSearchValue.bind(this);
+    }
+
+    updateSearchValue(x) {
+      this.setState({
+          searchValue: x
+      }, () => {this.getSearchResult()});
+    }
+
+    getSearchResult(){
+    let url = 'https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=' + this.state.search_value +'&site=stackoverflow'
+      fetch(url, {
+          method: 'GET'
+      })
+          .then(res => res.json())
+          .then(
+              (result) => {
+                  this.setState({
+                      searchResult: result.items
+                  });
+                  console.log(result.items)
+              },
+              (error) => {
+                  console.log('Error at fetch')
+              }
+          );
+    }
+
+    render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
+        <SearchBar action={this.updateSearchValue}/>
+        <br></br>
+
+        <div class="container results">
+
+
+                <Results searchResult={this.state.searchResult}/>
+            
+        </div>
+
       </div>
     );
   }
 }
-
-export default App;
+    export default App;
