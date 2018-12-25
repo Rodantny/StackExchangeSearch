@@ -7,13 +7,12 @@
   margin:2px;
 }
 
-.card{
+.card {
   color: #262637;
-  margin:0;
-  padding:10px;
-  border: 1px;
-  border-color: #2A363B;
+  margin: 0;
+  padding: 15px;
   position: relative;
+  border: 1px solid rgba(0,0,0,.125);
 }
 
 .card-body{
@@ -28,34 +27,4 @@
   padding-right:10px;
   background:#F8FFFF;
 }
-
-.date{
-  font-size: 12px;
-  margin:0px;
-  padding:0px;
-  padding-left:20px;
-  color: #A59E99;
-}
-
-.title{
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.info{
-  color: #A59E99;
-  font-size: 11px;
-  padding-left:20px;
-}
-.tagsContainer{
-  padding-left: 20px;
-}
-.tags{
-  background-color: #ecfbf3;
-  color: #2A363B;
-  font-size: 11px;
-  padding:5px;
-
-}
-
 

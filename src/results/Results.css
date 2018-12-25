@@ -1,0 +1,48 @@
+.addb{
+    border: 1px #EBEBEB;
+    color: #40312a;
+    margin:0;
+    padding:0;
+    position: relative;
+}
+
+.date{
+    font-size: 12px;
+    margin:0px;
+    padding:0px;
+    padding-left:20px;
+    color: #A59E99;
+    float:right;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.info{
+    color: #A59E99;
+    font-size: 12px;
+    padding-left:20px;
+}
+
+.fas{
+    padding-right:5px;
+}
+
+.InfoValue{
+    padding-right:5px;
+}
+
+.tagsContainer{
+    padding-left: 20px;
+}
+
+.tags{
+    background-color: #ecfbf3;
+    color: #2A363B;
+    font-size: 11px;
+    padding:5px;
+
+}

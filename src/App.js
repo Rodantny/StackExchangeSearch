@@ -2,28 +2,32 @@ import React, { Component } from 'react';
 import './App.css';
 import './searchbar/SearchBar.css';
 import SearchBar from './searchbar/SearchBar.js';
-import Results from './results/Results.js'
+import Results from './results/Results.js';
 
 class App extends Component {
     constructor(){
         super();
         this.state ={
-          searchValue : 'Empty',
-          searchResult:[]
+            userHasSearch:false,
+            searchValue:'',
+            searchResult:[]
         };
-
         this.updateSearchValue = this.updateSearchValue.bind(this);
     }
 
-    updateSearchValue(x) {
-      this.setState({
-          searchValue: x
-      }, () => {this.getSearchResult()});
+    updateSearchValue(newSearchValue) {
+        newSearchValue = String(newSearchValue);
+
+     this.setState({
+         userHasSearch:true,
+         searchValue: newSearchValue
+          }, () => {this.getSearchResult()});
     }
 
     getSearchResult(){
-    let url = 'https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=' + this.state.search_value +'&site=stackoverflow'
-      fetch(url, {
+    let url = 'https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=' + this.state.searchValue +'&site=stackoverflow&filter=!azbR7x6ZSfGPs1&key=EWJxZhShOdpF)HQkbg*PeA((';
+
+        fetch(url, {
           method: 'GET'
       })
           .then(res => res.json())
@@ -45,14 +49,7 @@ class App extends Component {
       <div className="App">
 
         <SearchBar action={this.updateSearchValue}/>
-        <br></br>
-
-        <div class="container results">
-
-
-                <Results searchResult={this.state.searchResult}/>
-            
-        </div>
+        {this.state.userHasSearch? <Results searchResult={this.state.searchResult}/>:''}
 
       </div>
     );

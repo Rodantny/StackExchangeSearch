@@ -1,73 +1,52 @@
 import {Component} from "react";
 import React from "react";
-import ResultsExtended from './ResultsExtended'
+import Navigation from "../navigation/Navigation";
+import ResultList from "./ResultList";
+import ResultExtended from './ResultExtended'
+import './Results.css'
 
 class Results extends Component{
     constructor() {
         super();
         this.state = {
-            ExtendedView: false,
+            ExtendedViewOn: false,
             ExtendedId:'',
-            searchResult: 1,
             ExtendedQuestionId: 0,
         };
+        this.ToggleExtendedView = this.ToggleExtendedView.bind(this);
+        this.SendValuetoExtendedView = this.SendValuetoExtendedView.bind(this);
 
     }
 
-    handleClick = (e) => {
-        console.log(e.target.id);
+    SendValuetoExtendedView = (e) => {
         this.setState({
-            ExtendedView: true,
-            ExtendedQuestionId:e.target.id
+            ExtendedViewOn: true,
+            ExtendedQuestionId:e.target.id,
+            ExtendedQuestionTitle:e.target.title,
         });
     };
 
-    render(){
-
-
-        return(
-            <div className="row">
-
-                {this.state.ExtendedView? <ResultsExtended QuestionId={this.state.ExtendedQuestionId}/>: ''}
-
-                {this.props.searchResult.map((data,key) => (
-                    <div className="card col-sm-12 mb-3">
-                        <div className="card">
-
-                            <div className="card-body">
-                                <span className='title'>Q: <a href="#" id={data.question_id} onClick={(e) => this.handleClick(e)}>{data.title}</a> </span><br></br>
-                                <span className='info'> <i className="fas fa-star"></i> {data.score} <i className="far fa-eye"></i> {data.view_count} <i className="fas fa-comment"></i> {data.answer_count}</span>
-
-                                <span className='date'>Asked on  <FormatDate timestamp={data.creation_date}/>  </span>
-                                <br></br>
-                                <div className="tagsContainer">
-                                    {data.tags.map((data,key) => (
-                                        <span className="badge tags" key={key}> {data} </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                ))}
-            </div>
-        )
+    ToggleExtendedView(x) {
+        this.setState({
+            ExtendedViewOn: x
+        });
     }
 
-}
+    render(){
+        return(
+            <div>
+                <Navigation CurrentPage={this.state.ExtendedQuestionTitle}
+                            ExtendedViewOn={this.state.ExtendedViewOn}
+                            ToggleExtendedView={this.ToggleExtendedView}/>
 
-/*This component format and converts Timestamps dates to MM/DD/YYYY */
-class FormatDate extends Component {
-    render() {
-        let timestamp = this.props.timestamp;
-        let NewDateObject = new Date(timestamp*1000);
-        let FullDate = (NewDateObject.getMonth() + 1) + '/' + NewDateObject.getDate() + '/' + NewDateObject.getFullYear();
-        return (
-            <a>{FullDate}</a>
+                {/*Ternary below will display full list of all search result(False)
+                    or extended information on one individual result(True)*/}
+                {this.state.ExtendedViewOn?
+                    <ResultExtended QuestionId={this.state.ExtendedQuestionId}/>:
+                    <ResultList searchResult={this.props.searchResult} SendValuetoExtendedView={this.SendValuetoExtendedView}/>}
+
+            </div>
         )
-
     }
 
 }

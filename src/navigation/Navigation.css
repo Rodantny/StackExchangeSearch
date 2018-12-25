@@ -1,0 +1,18 @@
+.Navigation{
+    background: #F7F7F7;
+    margin-bottom: 10px;
+}
+
+.NavigationContainer{
+    padding:10px;
+
+}
+
+h1{
+    margin:0px;
+    font-size:13px;
+}
+
+.cursor{
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+.ExtTitle{
+    color:#40312A;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.ExtDate{
+    color:#757575;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+pre{
+    color: #333333;
+    background:#EFF0F1;
+    padding:10px;
+    border-radius: 10px;
+    overflow-x:scroll;
+    width: 100%;
+}

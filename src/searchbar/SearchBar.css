@@ -9,5 +9,22 @@
 }
 
 .search{
-    background-color: #222222;
+    background-color: #333333;
+}
+
+.search_bar{
+    color: #262637;
+    margin: 0;
+    padding: 0px;
+    position: relative;
+    border: 0px solid rgba(0,0,0,.125);
+
+}
+.logoContainer{
+    float:left;
+    padding-right: 10px;
+}
+.logo {
+    width:200px; /* you can use % */
+    height: auto;
 }
