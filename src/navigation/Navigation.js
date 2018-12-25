@@ -7,10 +7,8 @@ class Navigation extends Component {
         this.handleNaviClick= this.handleNaviClick.bind(this);
     }
 
-
     handleNaviClick(event){
-        console.log('handle click n navi');
-        this.props.ToggleExtendedView(false);
+        this.props.ToggleExtendedView();
         event.preventDefault();
     }
 
@@ -20,10 +18,9 @@ class Navigation extends Component {
             <div className='Navigation'>
                 <div className="container NavigationContainer">
                     <h1>
-
-                        {this.props.ExtendedViewOn?   <span className="cursor" onClick={this.handleNaviClick}>Search Results </span> : <b>Search Results </b>}
-                        <span>{this.props.ExtendedViewOn? arrow : ""}</span>
-                        <b>{this.props.ExtendedViewOn? this.props.CurrentPage : ''}</b>
+                        {this.props.showSearchResultList? <b>Search results for <i>{this.props.searchValue}</i></b> : <span className="cursor" onClick={this.handleNaviClick}>Search results for <i>{this.props.searchValue} </i></span>}
+                        <span>{this.props.showSearchResultList? "" : arrow}</span>
+                        <b>{this.props.showSearchResultList? "" : this.props.Title}</b>
                     </h1>
                 </div>
             </div>

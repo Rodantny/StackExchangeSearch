@@ -1,6 +1,7 @@
 import {Component} from "react";
 import React from "react";
 import './ResultsExtended.css';
+import FormatDate from "./FormatDate";
 
 class ResultExtended extends Component{
     constructor(){
@@ -60,26 +61,34 @@ class ResultExtended extends Component{
 
         return(
             <div className='container'>
-                {this.state.QuestionItem.map((data,key) => (
-                    <div>
-                        <span className='ExtTitle'><b>{data.title}</b></span><br></br>
-                        <span className='ExtDate'>Asked on March 7th 1994 by <b>{data.owner.display_name}</b></span><br></br>
+                {this.state.QuestionItem.map((question,key) => (
+                    <div key={key}>
+                        <span className='ExtTitle'><b>{question.title}</b></span><br></br>
 
-                        <div>
-                            {data.tags.map((data,key) => (
-                                <span className="badge tags" key={key}> {data} </span>
-                            ))}
+                        <div className='row'>
+                            <div className='Extinfo col-sm-6' >
+                                        <span className='InfoValue'><i className="fas fa-star"></i>Score: {question.score}</span>
+                                        <span className='InfoValue'><i className="fas fa-eye"></i>Views: {question.view_count}</span>
+                                        <span className='InfoValue'><i className="fas fa-comment"></i>Answers: {question.answer_count}</span>
+                            </div>
+
+                            <div className='ExtDate col-sm-6 text-right'>
+                                <span >Asked on <FormatDate timestamp={question.creation_date}/>  by <b>{question.owner.display_name}</b></span><br></br>
                         </div>
 
-                        <div dangerouslySetInnerHTML={{__html: data.body}}></div>
-                        <h1>{data.answer_count} Answer</h1>
-                        <hr/>
+                        </div>
+                        <br></br>
+                        <div dangerouslySetInnerHTML={{__html: question.body}}></div>
 
-                        {data.answers.map((answer,key) => (
-                            <div>
-                                <p key={key}><div dangerouslySetInnerHTML={{__html: answer.body}}></div>}</p>
-                                <hr/>
-                                <hr/>
+                        {question.tags.map((data,key) => (
+                            <span className="badge tags" key={key}> {data} </span>
+                        ))}
+                        <br></br> <br></br>
+                        <span className='AnswerNum'> {question.answer_count} {question.answer_count > 1? 'Answers' : 'Answer'} </span><hr></hr>
+
+                        {question.answers.map((answer,key) => (
+                            <div key={key}>
+                                <p><div dangerouslySetInnerHTML={{__html: answer.body}}></div>}</p>
                             </div>
                         ))}
 

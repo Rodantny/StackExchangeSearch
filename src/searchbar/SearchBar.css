@@ -10,6 +10,8 @@
 
 .search{
     background-color: #333333;
+    padding:10px;
+    height:100%;
 }
 
 .search_bar{
@@ -20,11 +22,12 @@
     border: 0px solid rgba(0,0,0,.125);
 
 }
-.logoContainer{
-    float:left;
-    padding-right: 10px;
-}
+
 .logo {
     width:200px; /* you can use % */
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:10px;
 }

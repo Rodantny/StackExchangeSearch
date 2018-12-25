@@ -22,9 +22,15 @@
   position: relative;
 }
 
-.test{
-  float:left;
-  padding-right:10px;
-  background:#F8FFFF;
+.dashboard {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20vh;
+  text-align: center;
+}
+
+.dashboard p{
+  text-align: center;
 }
 

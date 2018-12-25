@@ -4,11 +4,18 @@
     font-weight: 300;
 }
 
-.ExtDate{
+.Extinfo{
     color:#757575;
     font-size: 1em;
     font-weight: 300;
 }
+
+
+.ExtDate{
+    color:#757575;
+    font-size: 1em;
+    font-weight: 300;
+    }
 
 pre{
     color: #333333;
@@ -18,3 +25,22 @@ pre{
     overflow-x:scroll;
     width: 100%;
 }
+
+.AnswerNum{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+img{
+    width:100%;
+    max-width:600px;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .text-right{
+        text-align: left!important;
+    }
+}
+
+

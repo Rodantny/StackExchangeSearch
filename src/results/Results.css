@@ -1,3 +1,4 @@
+
 .addb{
     border: 1px #EBEBEB;
     color: #40312a;
@@ -10,9 +11,9 @@
     font-size: 12px;
     margin:0px;
     padding:0px;
-    padding-left:20px;
+    padding-left: 20px;
     color: #A59E99;
-    float:right;
+    padding-right:20px;
 }
 
 .title{
@@ -44,5 +45,4 @@
     color: #2A363B;
     font-size: 11px;
     padding:5px;
-
 }

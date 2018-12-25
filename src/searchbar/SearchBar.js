@@ -1,5 +1,6 @@
 import {Component} from "react";
 import React from "react";
+import './SearchBar.css';
 
 class SearchBar extends Component{
     constructor(props) {
@@ -24,37 +25,34 @@ class SearchBar extends Component{
     render(){
         return(
             <div className='search'>
-                <br></br>
-            <div className="container ">
+                <div className="container ">
 
-                <div className="row ">
-
-                    <div className="col-12 ">
-                        <div className='logoContainer'>
-                            <img className='logo' alt='Stack Exchange Search' src='https://www.stackoverflowbusiness.com/hubfs/logo-so-white.png'></img>
-                        </div>
-                        <form className="card search_bar" onSubmit={this.handleSubmit}>
-
-                            <div className="card-body row no-gutters" >
+                    <div className="row ">
 
 
-
-                                <div className="col">
-                                    <input className="form-control form-control-lg form-control-borderless" type="search"
-                                           placeholder="Search "  value={this.state.value} onChange={this.handleChange} ></input>
-                                </div>
-
-                                <div className="col-auto">
-                                    <button className="btn btn-lg btn-primary" type="submit">Search</button>
-
-                                </div>
+                            <div className='col-lg-4'>
+                                <img className='logo' alt='Stack Exchange Search' src='https://www.stackoverflowbusiness.com/hubfs/logo-so-white.png'></img>
                             </div>
-                        </form>
+                            <div className='col-lg-8'>
+                                <form className="card search_bar" onSubmit={this.handleSubmit}>
+
+                                    <div className="card-body row no-gutters" >
+
+                                        <div className="col">
+                                            <input className="form-control form-control-lg form-control-borderless" type="search"
+                                            placeholder="Search "  value={this.state.value} onChange={this.handleChange} ></input>
+                                        </div>
+
+                                        <div className="col-auto">
+                                            <button className="btn btn-lg btn-primary" type="submit">Search</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
 
                     </div>
                 </div>
-            </div>
-                <br></br>
             </div>
         );
     }

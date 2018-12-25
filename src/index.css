@@ -3,13 +3,9 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #FFF;
+  background: #fff;
   font-family: "effra",arial,helvetica,sans-serif;
   font-size: 15px;
 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
