@@ -1,6 +1,7 @@
 import {Component} from "react";
 import React from "react";
 import './SearchBar.css';
+import Logo from './logo.png';
 
 class SearchBar extends Component{
     constructor(props) {
@@ -28,10 +29,8 @@ class SearchBar extends Component{
                 <div className="container ">
 
                     <div className="row ">
-
-
                             <div className='col-lg-4'>
-                                <img className='logo' alt='Stack Exchange Search' src='https://www.stackoverflowbusiness.com/hubfs/logo-so-white.png'></img>
+                                <img className='logo' alt='Stack Exchange Search' src={Logo}></img>
                             </div>
                             <div className='col-lg-8'>
                                 <form className="card search_bar" onSubmit={this.handleSubmit}>

@@ -46,3 +46,17 @@
     font-size: 11px;
     padding:5px;
 }
+
+.AnswerInfo {
+    margin-bottom:10px;
+}
+
+.ExtendedDate{
+    margin-top:15px;
+    margin-bottom:15px;
+    color:#757575;
+}
+
+.accepted{
+    color:green;
+}

@@ -1,6 +1,5 @@
 import {Component} from "react";
 import React from "react";
-import Navigation from "../navigation/Navigation";
 import ResultList from "./ResultList";
 import ResultExtended from './ResultExtended'
 import './Results.css'
@@ -18,7 +17,7 @@ class Results extends Component{
 
     render(){
         return(
-            <div className='resultscon'>
+            <div className='resultscon '>
                 {/*Ternary below will display full list of all search results(true)
                     or extended information on one individual result(false)*/}
                 {this.props.showSearchResultList?

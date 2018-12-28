@@ -105,10 +105,8 @@ class App extends Component {
 class Dashboard extends Component{
     render(){
         return(
-            <div className='Dashboard'>
-            
-                    <img className="dashboard" src={Intro}></img>
-
+            <div className='container Dashboard'>
+                    <img className="dashboard" alt='Stack Exchange Search' src={Intro}></img>
             </div>
         )
     }

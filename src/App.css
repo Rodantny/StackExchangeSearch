@@ -1,4 +1,16 @@
 
+.dashboard {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20vh;
+  text-align: center;
+}
+
+.dashboard p{
+  text-align: center;
+}
+
 .results {
   text-align: left;
 }
@@ -21,16 +33,3 @@
   padding:0;
   position: relative;
 }
-
-.dashboard {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 20vh;
-  text-align: center;
-}
-
-.dashboard p{
-  text-align: center;
-}
-

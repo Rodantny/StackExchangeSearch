@@ -6,6 +6,7 @@ body {
   background: #fff;
   font-family: "effra",arial,helvetica,sans-serif;
   font-size: 15px;
+  overflow-y: scroll;
 
 }
 
